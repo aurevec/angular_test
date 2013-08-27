@@ -1,0 +1,48 @@
+h1 Listing contacts
+
+div [ng-controller="ContactsController"]
+  div
+    label for="search" Search :
+    input#search [ng-model="query"]
+
+  div
+    label for="sort" Sort by :
+    select#sort [ng-model='orderProp']
+      option value="first_name" First name
+      option value="last_name" Last name
+      option value="phone" Phone
+      option value="mobile" Mobile
+      option value="email" Email
+
+  table
+    thead
+      tr
+        th First name
+        th Last name
+        th Phone
+        th Mobile
+        th Email
+        th
+        th
+        th
+    tbody 
+      tr [ng-repeat="contact in contacts | filter:query | orderBy:orderProp"]
+        td 
+          | {{ contact.first_name }}
+        td 
+          | {{ contact.last_name }}
+        td 
+          | {{ contact.phone }}
+        td 
+          | {{ contact.mobile }}
+        td 
+          | {{ contact.email }}
+        td 
+          a href="/contacts/{{contact.id}}" Show
+        td
+          a href="/contacts/{{contact.id}}/edit" Edit
+        td
+          a data-confirm="Are you sure?" data-method="delete" href="/contacts/{{contact.id}}" rel="nofollow" Destroy
+
+br
+  = link_to 'New Contact', new_contact_path        

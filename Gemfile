@@ -11,6 +11,15 @@ gem 'foreigner',           '~> 1.4.1'
 
 gem 'airbrake'
 
+gem "slim", "~> 2.0.1"
+gem "simple_form", "~> 3.0.0.rc"
+gem "angularjs-rails", "~> 1.0.7"
+
+# Misc
+gem 'mime-types',                 '~> 1.23'
+gem 'rails_12factor'
+gem 'api-versions'
+
 group :development do
   gem "immigrant",         '~> 0.1.4'
   gem 'bullet',            '4.2.0'
@@ -38,9 +47,6 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

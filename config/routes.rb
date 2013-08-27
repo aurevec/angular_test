@@ -3,6 +3,14 @@ Angular::Application.routes.draw do
 
   root "contacts#index"
 
+  api vendor_string: "aurevec", default_version: 1 do
+    version 1 do
+      cache as: 'v1' do
+        resources :contacts
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
